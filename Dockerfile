@@ -1,14 +1,11 @@
-FROM opensuse:42.1
+FROM ubuntu:16.10
 MAINTAINER robin.roth@kit.edu
 
-RUN zypper --gpg-auto-import-keys --non-interactive ref && \
-    zypper --gpg-auto-import-keys --non-interactive up
-
-RUN zypper --non-interactive in --auto-agree-with-licenses \
-    automake make libtool \
-    gcc gcc-fortran gcc-c++ \
-    gcc5 gcc5-fortran gcc5-c++ \
+RUN apt update && apt install -y \
+    build-essential \
+    gfortran-6 g++-6 gcc-6 \
+    automake libtool \
     binutils-gold \
-    gsl gsl-devel \
+    gsl-bin libgsl-dev \
     python3-pytest \
     git
