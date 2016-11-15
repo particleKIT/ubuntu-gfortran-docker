@@ -3,7 +3,7 @@ MAINTAINER robin.roth@kit.edu
 
 RUN apt update && apt install -y \
     build-essential \
-    gfortran-6 g++-6 gcc-6 \
+    gfortran gfortran-6 g++-6 gcc-6 \
     automake libtool \
     binutils-gold \
     gsl-bin libgsl-dev \
